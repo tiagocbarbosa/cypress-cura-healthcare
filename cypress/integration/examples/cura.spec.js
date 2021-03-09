@@ -18,4 +18,9 @@ describe('Cura Make Appointment', () => {
         cy.get('#txt_comment').type('My first appointment')
         cy.get('#btn-book-appointment').click()
     })
+
+    it('Verify Appointment', () => {
+        cy.get('h2').contains('Appointment Confirmation')
+        cy.get('#comment').contains('My first appointment')
+    })
 })
